@@ -12,7 +12,7 @@ except Exception as e:
 app = FastAPI()
 
 
-@app.get("/healthz")
+@app.get("/healthz"
 async def root(db: Session = Depends(get_db)):
     try:
         return {"message": "Hello world!!"}
