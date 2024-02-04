@@ -1,12 +1,11 @@
 from typing import Annotated
 
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import Depends, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from sqlalchemy.orm import Session
 
 from app.database.db import get_db
 from app.exceptions.AuthorizationException import AuthorizationException
-from app.schemas import User
 from app.services.UserService import user_service
 from app.util import passutil
 

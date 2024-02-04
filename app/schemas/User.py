@@ -5,7 +5,6 @@ from typing import Optional
 from pydantic import BaseModel, EmailStr
 
 
-
 class UserOut(BaseModel):
     id: uuid.UUID
     first_name: str
@@ -16,6 +15,7 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class UserCreate(BaseModel):
     first_name: str

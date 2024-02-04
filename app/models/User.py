@@ -6,12 +6,6 @@ from sqlalchemy.dialects import postgresql
 from app.database.db import Base
 
 
-def generate_uuid():
-    val = str(uuid.uuid4())
-    print('val ', val)
-    return val
-
-
 class User(Base):
     __tablename__ = "User"
     id = Column(postgresql.UUID(as_uuid=True),

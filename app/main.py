@@ -1,10 +1,8 @@
 from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.orm import Session
 
-from app import models
 from app.database.db import get_db, engine, Base
-
-from app.routers import User, api_router
+from app.routers import api_router
 
 try:
     Base.metadata.create_all(bind=engine)
@@ -22,6 +20,5 @@ async def root(db: Session = Depends(get_db)):
         raise HTTPException(status_code=503, detail=str(e))
 
 
-# app.include_router(User.router)
 app.include_router(api_router)
 
