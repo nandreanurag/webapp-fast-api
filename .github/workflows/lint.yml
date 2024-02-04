@@ -26,12 +26,12 @@ jobs:
 
       - name: Lint FastAPI code
         run: |
-          flake8 your_fastapi_app_directory  # Replace with your FastAPI code directory
+          flake8 app
         continue-on-error: true  # Continue even if there are linting errors
 
       - name: Check for linting errors
         run: |
-          if [ -n "$(flake8 your_fastapi_app_directory)" ]; then
+          if [ -n "$(flake8 app)" ]; then
             echo "Linting errors found. Please fix them before merging."
             exit 1
           fi
